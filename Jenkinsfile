@@ -48,17 +48,14 @@ pipeline {
 
     stage('Terraform Plan') {
       steps {
-        sh """
-          terraform plan -var="env=${env.TF_WORKSPACE}"
-        """
+        sh 'terraform plan -out=tfplan.out'
       }
     }
 
     stage('Terraform Apply') {
       steps {
-        sh """
-          terraform apply -auto-approve -var="env=${env.TF_WORKSPACE}"
-        """
+        sh 'terraform plan -out=tfplan.out"'
+      
       }
     }
   }
