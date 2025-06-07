@@ -39,6 +39,7 @@ pipeline {
     stage('Terraform Select Workspace') {
       steps {
         sh """
+          unset TF_WORKSPACE
           # If workspace does not exist, create it; else select it
           terraform workspace select ${env.TF_WORKSPACE} || terraform workspace new ${env.TF_WORKSPACE}
         """
