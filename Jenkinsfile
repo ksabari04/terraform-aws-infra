@@ -40,6 +40,7 @@ pipeline {
       steps {
         sh """
           # If workspace does not exist, create it; else select it
+          unset TF_WORKSPACE
           terraform workspace select ${env.TF_WORKSPACE} || terraform workspace new ${env.TF_WORKSPACE}
         """
       }
