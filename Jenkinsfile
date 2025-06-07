@@ -16,7 +16,7 @@ pipeline {
             -backend-config="bucket=${BUCKET_NAME}" \
             -backend-config="key=${TF_WORKSPACE}/terraform.tfstate" \
             -backend-config="region=${AWS_REGION}" \
-            -backend-config="dynamodb_table=${DYNAMO_TABLE}"
+            -backend-config="dynamodb_table=${DYNAMO_TABLE}" \
             -reconfigure
         """
       }
