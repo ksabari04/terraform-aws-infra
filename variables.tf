@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "ami_id" {
-  default = "ami-0c55b159cbfafe1f0"  # Example for ap-south-1
+  default = "ami-0f535a71b34f2d44a"  # Example for ap-south-1
 }
 
 variable "instance_type" {
